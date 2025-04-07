@@ -1,0 +1,95 @@
+/* Custom styles to enhance Tailwind-based UI */
+
+/* Smooth transitions for interactive elements */
+button,
+input {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Input styling for focus and interaction */
+input[type="text"] {
+  outline: none;
+  width: 250px;
+  box-shadow: 0 0 0 0 transparent;
+}
+
+input[type="text"]:focus {
+  border-color: #3b82f6; /* blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Button hover & active styles */
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Recent cities dropdown */
+#dropdown ul {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#dropdown ul li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e5e7eb; /* Tailwind gray-200 */
+  cursor: pointer;
+}
+
+#dropdown ul li:hover {
+  background-color: #f0f9ff; /* Tailwind blue-50 */
+  color: #1d4ed8; /* Tailwind blue-700 */
+}
+
+/* Weather Data Cards */
+#weatherData,
+#extendedForecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Individual card styling */
+#weatherData > div,
+#extendedForecast > div {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#weatherData > div:hover,
+#extendedForecast > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Text styles inside cards */
+#weatherData h2,
+#extendedForecast h3 {
+  font-size: 1.2rem;
+  color: #2563eb; /* Tailwind blue-600 */
+  margin-bottom: 10px;
+}
+
+/* Responsive spacing */
+@media (max-width: 640px) {
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #weatherData,
+  #extendedForecast {
+    grid-template-columns: 1fr;
+  }
+}

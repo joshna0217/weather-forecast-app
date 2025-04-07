@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast Application</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-blue-100 min-h-screen w-screen px-4 py-4 lg:px-8 lg:py-8">
+  <div class="w-full h-full bg-white rounded-none shadow-none p-6 lg:p-10 max-w-screen-2xl mx-auto">
+    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-6 text-blue-700">
+      🌦️ Weather Forecast Application
+    </h1>
+
+    <!-- Search Section -->
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city name"
+        class="flex-1 p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+      <button
+        id="searchButton"
+        class="bg-blue-500 text-white px-4 py-3 rounded hover:bg-blue-600 transition duration-300"
+      >
+        Search
+      </button>
+      <button
+        id="locationButton"
+        class="bg-green-500 text-white px-4 py-3 rounded hover:bg-green-600 transition duration-300"
+      >
+        Use Current Location
+      </button>
+    </div>
+
+    <!-- Recent Cities Dropdown -->
+    <div id="dropdown" class="mt-3 hidden">
+      <ul
+        id="recentCities"
+        class="bg-white border border-gray-300 rounded shadow-lg max-h-40 overflow-y-auto divide-y divide-gray-200"
+      ></ul>
+    </div>
+
+    <!-- Current Weather Data -->
+    <div id="weatherData" class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <!-- Extended Forecast -->
+    <div id="extendedForecast" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
